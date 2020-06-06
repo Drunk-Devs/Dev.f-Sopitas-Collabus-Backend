@@ -1,0 +1,83 @@
+#
+# __Seed builder__v0.1.8
+#   AUTO_GENERATED (Read only)
+#   Modify via builder
+#
+#   Guidelines:
+#      - Use template as base for fixture creation
+#      - Run with > python3 manage.py loaddata fixtures/*.yaml
+#
+
+# Business
+
+- model: models.business
+  pk: 1
+  fields:
+    name: ""
+    address_cords: ""
+    contact_1: ""
+    contact_2: ""
+    contact_3: ""
+    contact_4: ""
+    tags: ""
+    is_local: false
+    opening_time: "2019-01-01T12:00:00+00:00"
+    closing_time: "2019-01-01T12:00:00+00:00"
+    open_days: ""
+    verified: false
+    user:  0
+    category:  0
+
+# Category
+
+- model: models.category
+  pk: 1
+  fields:
+    name: "SALUD|ENTRETENIMIENTO|ABARROTES|CUIDADO PERSONAL|BELLEZA|ACTIVIDAD FISICA|CONSTRUCCION Y MANTENIMIENTO|TRANSPORTE|RESTAURANTES|COMIDA|CONTRATISTAS|"
+
+# Stat
+
+- model: models.stat
+  pk: 1
+  fields:
+    prop_1: 128
+    prop_2: 128
+    prop_3: 128
+    prop_4: 128
+    comment: ""
+    user:  0
+
+# User
+
+- model: models.user
+  pk: 1
+  fields:
+    username: ""
+    first_name: ""
+    last_name: ""
+    email: ""
+    password: "pbkdf2_sha256$150000$jMOqkdOUpor5$kU/QofjBsopM+CdCnU2+pROhtnxd5CZc7NhUiXNTMc0="
+    is_active: true
+    is_superuser: true
+    is_staff: true
+    last_login: "2019-01-01T12:00:00+00:00"
+    groups: []
+    user_permissions: []
+    date_joined: "2019-01-01T12:00:00+00:00"
+    user_type:  0
+
+# UserType
+
+- model: models.userType
+  pk: 1
+  fields:
+    name: "OWNER|CLIENT|"
+
+# File
+
+- model: models.File
+  pk: 1
+  fields:
+    url: "https://st-listas.20minutos.es/images/2010-01/177732/1966423_640px.jpg?1518458710"
+    size: 128
+    name: "file"

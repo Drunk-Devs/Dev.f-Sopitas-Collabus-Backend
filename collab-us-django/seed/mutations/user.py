@@ -5,10 +5,7 @@ __Seed builder__v0.1.8
 """
 
 import graphene
-from graphene_django import DjangoObjectType
 from app.models import User
-from app.models import UserType
-from app.models import File
 from seed.schema.types import User as UserType
 
 class SaveUserMutation(graphene.Mutation):
@@ -22,7 +19,6 @@ class SaveUserMutation(graphene.Mutation):
         email = graphene.String(required=True)
         isActive = graphene.Boolean(required=True)
         password = graphene.String(required=True)
-        userType = graphene.Int(required=True)
 
     def mutate(self, info, **kwargs):
 
@@ -32,9 +28,6 @@ class SaveUserMutation(graphene.Mutation):
         if "lastName" in kwargs: user["last_name"] = kwargs["lastName"]
         if "email" in kwargs: user["email"] = kwargs["email"]
         if "isActive" in kwargs: user["is_active"] = kwargs["isActive"]
-        if "userType" in kwargs:
-             user_type = UserType.objects.get(pk = kwargs["userType"])
-             user["user_type"] = user_type
         user = User.objects.create(**user)
         if "password" in kwargs: user.setPassword(kwargs["password"])
         user.save()
@@ -53,7 +46,6 @@ class SetUserMutation(graphene.Mutation):
         email = graphene.String(required=False)
         isActive = graphene.Boolean(required=False)
         password = graphene.String(required=False)
-        userType = graphene.Int(required=False)
 
     def mutate(self, info, **kwargs):
 
@@ -64,9 +56,6 @@ class SetUserMutation(graphene.Mutation):
         if "email" in kwargs: user.email = kwargs["email"]
         if "isActive" in kwargs: user.is_active = kwargs["isActive"]
         if "password" in kwargs: user.setPassword(kwargs["password"])
-        if "userType" in kwargs:
-             user_type = UserType.objects.get(pk = kwargs["userType"])
-             user.user_type = user_type
         user.save()
     
         return SetUserMutation(user=user)

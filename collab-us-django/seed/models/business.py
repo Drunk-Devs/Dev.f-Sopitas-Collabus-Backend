@@ -18,8 +18,10 @@ class Business(Model):  #
     contact_4 = models.CharField(max_length=250, blank=True)
     tags = models.TextField(blank=True)
     is_local = models.BooleanField(default=False )
-    opening_time = models.DateTimeField(default=datetime.now)
-    closing_time = models.DateTimeField(default=datetime.now)
+    opening_time = models.DateTimeField(
+        blank=False, null=False, default=datetime.now)
+    closing_time = models.DateTimeField(
+        blank=False, null=False, default=datetime.now)
     open_days = models.CharField(max_length=50, blank=True)
     verified = models.BooleanField(default=False )
 

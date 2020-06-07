@@ -4,13 +4,13 @@ Represents the API routes definitions (endpoints)
 
 ## Table of content
 
--  [Description](#description)
--  [Guidelines](#guidelines)
--  [Examples](#examples)
-    - [GET example](#get-example)
-    - [POST example](#post-example)
--  [References](#references)
--  [Seed views](#seed-views)
+-   [Description](#description)
+-   [Guidelines](#guidelines)
+-   [Examples](#examples)
+    -   [GET example](#get-example)
+    -   [POST example](#post-example)
+-   [References](#references)
+-   [Seed views](#seed-views)
 
 ## Description
 
@@ -18,17 +18,17 @@ The viewsets are the responsible to handle all the http requests corresponding t
 
 By default, a viewset the main CRUD operations of a model using REST standard. Example: 
 
--  GET (get list & details)
--  POST (save)
--  PUT (Modify)
--  DELETE (Delete)
+-   GET (get list & details)
+-   POST (save)
+-   PUT (Modify)
+-   DELETE (Delete)
 
 ## Guidelines
 
--  Add business logic via domains.
--  Preferably *just add actions* if required
--  To export a view use command \
->  $ seed export -m views:model_name
+-   Add business logic via domains.
+-   Preferably *just add actions* if required
+-   To export a view use command \
+>   $ seed export -m views:model_name
 
 ## Examples
 
@@ -52,7 +52,7 @@ class PlayerViewSet(_PlayerViewSet):  #
 ```
 
 Endpoint
-```
+```bash
 GET http://localhost:8000/players/top_10
 ```
 
@@ -77,12 +77,12 @@ class UserViewSet(_UserViewSet):  #
 ```
 
 Endpoint
-```
+```bash
 POST http://localhost:8000/users/1/create_profile
 ```
 
 ## References
 
--  REST API explanation: [https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9](https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9)
--  Viewsets reference: [https://www.django-rest-framework.org/api-guide/viewsets/](https://www.django-rest-framework.org/api-guide/viewsets/)
--  Actions reference: [https://www.django-rest-framework.org/api-guide/viewsets/#viewset-actions](https://www.django-rest-framework.org/api-guide/viewsets/#viewset-actions)
+-   REST API explanation: [https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9](https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9)
+-   Viewsets reference: [https://www.django-rest-framework.org/api-guide/viewsets/](https://www.django-rest-framework.org/api-guide/viewsets/)
+-   Actions reference: [https://www.django-rest-framework.org/api-guide/viewsets/#viewset-actions](https://www.django-rest-framework.org/api-guide/viewsets/#viewset-actions)

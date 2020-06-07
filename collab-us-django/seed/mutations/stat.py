@@ -5,11 +5,8 @@ __Seed builder__v0.1.8
 """
 
 import graphene
-from graphene_django import DjangoObjectType
 from app.models import Stat
-from app.models import Business
 from app.models import User
-from app.models import File
 from seed.schema.types import Stat as StatType
 
 class SaveStatMutation(graphene.Mutation):

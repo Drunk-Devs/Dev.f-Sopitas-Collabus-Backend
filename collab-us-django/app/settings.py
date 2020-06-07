@@ -112,7 +112,7 @@ if USE_AWS_S3:
 
 REST_AUTH_SERIALIZERS = {'TOKEN_SERIALIZER': 'seed.serializers.helpers.token.TokenSerializer'}
 CORS_ORIGIN_WHITELIST = [os.getenv('APP_URL')]
-ALLOWED_HOSTS = [urlparse(os.getenv('HOST_URL')).hostname]
+ALLOWED_HOSTS = ['127.0.0.1']
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
